@@ -16,10 +16,8 @@ void setup()
     gravityTds.begin();  //initialization
     
 }
- 
-void loop()
-{
-    //temperature = readTemperature();  //add your temperature sensor and read it
+
+void sample() {
     gravityTds.setTemperature(temperature);  // set the temperature and execute temperature compensation
     gravityTds.update();  //sample and calculate
     tdsValue = gravityTds.getTdsValue();  // then get the value
