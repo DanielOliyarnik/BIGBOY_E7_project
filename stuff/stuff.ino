@@ -31,21 +31,22 @@ void setup() {
 
 void loop() {
   straight(11350+525);
-  //dip
-  straight(1025);
-  right_turn();
-  straight();
-  left_turn();
-  straight();
-  //dip
-  straight():
-  left_turn();
-  straight();
-  right_turn();
-  straight();
+  // //dip
+  // straight(1025);
+  // right_turn();
+  // straight();
+  // left_turn();
+  // straight();
+  // //dip
+  // straight():
+  // left_turn();
+  // straight();
+  // right_turn();
+  // straight();
 
 }
 
+<<<<<<< Updated upstream
 
 int sample() {
     gravityTds.setTemperature(temperature);  // set the temperature and execute temperature compensation
@@ -73,43 +74,47 @@ void sample_dip() {
 }
 
 void straight (ticks) {
+=======
+void straight (int ticks) {
+>>>>>>> Stashed changes
 	stepper_left.move(ticks);
-	stepper_left.setMaxSpeed(500);
+	stepper_left.setMaxSpeed(100);
 	stepper_left.setAcceleration(100);
+  ticks = ticks*(-1);
   stepper_right.move(ticks);
-	stepper_right.setMaxSpeed(500);
+	stepper_right.setMaxSpeed(100);
 	stepper_right.setAcceleration(100);
 
   stepper_left.run();
   stepper_right.run();
 }
 
-void left_turn (ticks) {
+void left_turn (int ticks) {
 	stepper_left.move(ticks);
 	stepper_left.setMaxSpeed(500);
 	stepper_left.setAcceleration(100);
   stepper_left.run();
 }
 
-void right_turn (ticks) {
+void right_turn (int ticks) {
 	stepper_right.move(ticks);
 	stepper_right.setMaxSpeed(500);
 	stepper_right.setAcceleration(100);
   stepper_right.run();
 }
 
-void LCD_Display(TDS_value) {
+// void LCD_Display(int TDS_value) {
 
-  lcd.clear();                 // clear display
-  lcd.setCursor(0, 0);         // move cursor to   (0, 0)
-  lcd.print(TDS_value + " mg/L");        // print message at (0, 0)
-  lcd.setCursor(0, 2);         // move cursor to   (0, 2)
+//   lcd.clear();                 // clear display
+//   lcd.setCursor(0, 0);         // move cursor to   (0, 0)
+//   lcd.print(TDS_value + " mg/L");        // print message at (0, 0)
+//   lcd.setCursor(0, 2);         // move cursor to   (0, 2)
 
-  if(TDS_value>=600) {
-	  lcd.print("UNSAFE!");        // print message at (0, 2)
-  } else {
-	  lcd.print("SAFE");
-  }
+//   if(TDS_value>=600) {
+// 	  lcd.print("UNSAFE!");        // print message at (0, 2)
+//   } else {
+// 	  lcd.print("SAFE");
+//   }
 
-  //delay(2000);                 // display the above for two seconds
-}
+//   //delay(2000);                 // display the above for two seconds
+// }
