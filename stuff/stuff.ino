@@ -17,7 +17,19 @@ void setup() {
 }
 
 void loop() {
-
+  straight(11350+525);
+  //dip
+  straight(1025);
+  right_turn();
+  straight();
+  left_turn();
+  straight();
+  //dip
+  straight():
+  left_turn();
+  straight();
+  right_turn();
+  straight();
 
 }
 
